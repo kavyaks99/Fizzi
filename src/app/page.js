@@ -1,7 +1,6 @@
-export default function Home() {
-  return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-  )
+import { Bounded } from "../components/Bounded";
+import Home from "./pages/Home";
+
+export default function Main() {
+  return <Home />;
 }
