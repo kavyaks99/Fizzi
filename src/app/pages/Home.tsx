@@ -6,6 +6,8 @@ import { Bounded } from "../../components/Bounded";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { View } from "@react-three/drei";
+import Scene from "./Scene";
 
 function Home() {
   gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -64,6 +66,9 @@ function Home() {
 
   return (
     <Bounded className="hero opacity-0">
+      <View className="hero-scene pointer-events-none sticky top-0 z-50 -mt-[100vh] hidden h-screen w-screen md:block">
+        <Scene />
+      </View>
       <div className="grid">
         <div className="grid h-[80vh] place-items-center">
           <div className="grid auto-rows-min place-items-center text-center">
