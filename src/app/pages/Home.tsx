@@ -5,9 +5,10 @@ import { TextSplitter } from "../../components/TextSplitter";
 import { Bounded } from "../../components/Bounded";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function Home() {
-  gsap.registerPlugin(useGSAP);
+  gsap.registerPlugin(useGSAP, ScrollTrigger);
 
   useGSAP(() => {
     const introT1 = gsap.timeline();
@@ -26,6 +27,38 @@ function Home() {
         opacity: 0,
         y: 10,
         duration: 0.5,
+      });
+
+    const scrollT1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 1.5,
+        markers: true,
+      },
+    });
+
+    scrollT1
+      .fromTo(
+        "body",
+        { backgroundColor: "#FDE047" },
+        { backgroundColor: "#D9F99D", overwrite: "auto" },
+        1
+      )
+      .from(".text-side-heading .split-char", {
+        scale: 1.3,
+        y: 40,
+        rotate: -25,
+        stagger: 0.1,
+        opacity: 0,
+        ease: "back.out(3)",
+        duration: 0.6,
+      })
+      .from(".text-side-body", {
+        opacity: 0,
+        y: 20,
+        duration: 0.4,
       });
   });
 
