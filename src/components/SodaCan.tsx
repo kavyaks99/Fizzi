@@ -1,6 +1,7 @@
 "use client";
 
 import { useGLTF, useTexture } from "@react-three/drei";
+import { useMemo } from "react";
 import * as THREE from "three";
 
 useGLTF.preload("/Soda-can.gltf");
@@ -33,14 +34,17 @@ export function SodaCan({
 
   const labels = useTexture(flavorTextures);
 
-  // Fixes upside down labels
-  labels.strawberryLemonade.flipY = false;
-  labels.blackCherry.flipY = false;
-  labels.watermelon.flipY = false;
-  labels.grape.flipY = false;
-  labels.lemonLime.flipY = false;
+  // Fixes upside down labels by cloning textures
+  const fixedLabels = useMemo(() => {
+    const fixed: typeof labels = {} as typeof labels;
+    for (const key in labels) {
+      fixed[key] = labels[key].clone();
+      fixed[key].flipY = false;
+    }
+    return fixed;
+  }, [labels]);
 
-  const label = labels[flavor];
+  const label = fixedLabels[flavor];
 
   return (
     <group {...props} dispose={null} scale={scale} rotation={[0, -Math.PI, 0]}>
