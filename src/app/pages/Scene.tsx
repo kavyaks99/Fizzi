@@ -48,39 +48,41 @@ function Scene({}: Props) {
     gsap.set(canRef5.current.position, { y: -4, x: -2 });
 
     const introTl = gsap.timeline({
-      defaults: { duration: 1, ease: "back.out(1.7)" },
+      defaults: { duration: 2.5, ease: "back.out(1.5)" },
     });
 
-    introTl.from(
-      can1GroupRef.current.position,
-      {
-        y: -5,
-        x: 1,
-      },
-      0
-    );
-    introTl.from(
-      can1GroupRef.current.rotation,
-      {
-        z: 3,
-      },
-      0
-    );
-    introTl.from(
-      can2GroupRef.current.position,
-      {
-        y: 5,
-        x: 1,
-      },
-      0
-    );
-    introTl.from(
-      can2GroupRef.current.rotation,
-      {
-        z: 3,
-      },
-      0
-    );
+    if (window.scrollY < 20) {
+      introTl.from(
+        can1GroupRef.current.position,
+        {
+          y: -5,
+          x: 1,
+        },
+        0
+      );
+      introTl.from(
+        can1GroupRef.current.rotation,
+        {
+          z: 3,
+        },
+        0
+      );
+      introTl.from(
+        can2GroupRef.current.position,
+        {
+          y: 5,
+          x: 1,
+        },
+        0
+      );
+      introTl.from(
+        can2GroupRef.current.rotation,
+        {
+          z: 3,
+        },
+        0
+      );
+    }
 
     const scrollTl = gsap.timeline({
       defaults: { duration: 2 },
@@ -96,20 +98,30 @@ function Scene({}: Props) {
       .to(groupRef.current.rotation, {
         y: Math.PI * 2,
       })
-      .to(canRef1.current.position, { x: 1.1, y: -0.7, z: -2 }, 0)
-      .to(canRef1.current.rotation, { z: 0.3 }, 0)
+      //black cherry
+      .to(canRef1.current.position, { x: 0.3, y: 0.4, z: -2 }, 0)
+      .to(canRef1.current.rotation, { z: 0.7 }, 0)
 
+      //watermelon
       .to(canRef2.current.position, { x: 1, y: -0.5, z: -1 }, 0)
-      .to(canRef2.current.rotation, { z: -0.5 }, 0)
+      .to(canRef2.current.rotation, { z: -0.6 }, 0)
 
-      .to(canRef3.current.position, { x: 2, y: -0.3, z: -1 }, 0)
-      .to(canRef3.current.rotation, { z: 0 }, 0)
+      //grape
+      .to(canRef3.current.position, { x: 1.5, y: -0.3, z: -2 }, 0)
+      .to(canRef3.current.rotation, { z: 0.4 }, 0)
 
-      .to(canRef4.current.position, { y: 0.5, z: -3, x: 2.1 }, 0)
-      .to(canRef4.current.rotation, { z: -0.3 }, 0)
+      //lemon lime
+      .to(canRef4.current.position, { y: 0.5, z: -3, x: 1.8 }, 0)
+      .to(canRef4.current.rotation, { z: -0.5 }, 0)
 
-      .to(canRef5.current.position, { y: 0.5, x: 1.4, z: -3 }, 0)
-      .to(canRef5.current.rotation, { z: 0.25 }, 0);
+      //strawberry lemonade
+      .to(canRef5.current.position, { y: 0.5, x: 1, z: -3 }, 0)
+      .to(canRef5.current.rotation, { z: 0.25 }, 0)
+      .to(
+        groupRef.current.position,
+        { x: 1, ease: "sine.inOut", duration: 3 },
+        1.3
+      );
   });
 
   return (
