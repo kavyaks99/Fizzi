@@ -9,7 +9,20 @@
   }
 }
 
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @utility animate-slide-left {
   animation: slide-left 3s linear infinite;
+}
+
+@utility animate-spin-slow {
+  animation: spin-slow 10s linear infinite;
 }
 
