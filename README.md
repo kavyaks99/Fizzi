@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Fizzi - Live Gutsy
 
-## Getting Started
+A modern, interactive website for Fizzi, a gut-friendly soda brand. Built with Next.js, React Three Fiber, and GSAP animations to create an engaging, immersive experience showcasing the brand's products and values.
 
-First, run the development server:
+## 🎯 About
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This website features:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **5 Delicious Flavors**: Black Cherry, Grape, Lemon Lime, Strawberry Lemonade, and Watermelon Crush
+- **Gut-Friendly**: Packed with prebiotics and 1 billion probiotics
+- **Low Calories**: Just 20 calories per can
+- **Natural Ingredients**: Real fruit juice, no artificial sweeteners or high fructose corn syrup
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## ✨ Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **3D Interactive Scenes**: Immersive 3D soda can visualizations using React Three Fiber
+- **Smooth Animations**: GSAP-powered scroll-triggered animations and transitions
+- **Responsive Design**: Mobile-first design that works beautifully on all devices
+- **Interactive Carousel**: Explore all five flavors with smooth transitions
+- **Dynamic Text Effects**: Animated text splitting and alternating content sections
+- **Performance Optimized**: Built with Next.js for optimal performance and SEO
 
-## Learn More
+## 🛠️ Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+### Core
+- **Next.js 16** - React framework with App Router
+- **React 19** - UI library
+- **TypeScript** - Type safety
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 3D Graphics
+- **React Three Fiber** - React renderer for Three.js
+- **@react-three/drei** - Useful helpers for R3F
+- **Three.js** - 3D graphics library
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Animations
+- **GSAP** - Professional animation library
+- **@gsap/react** - React hooks for GSAP
+- **ScrollTrigger** - Scroll-based animations
 
-## Deploy on Vercel
+## 📦 Installation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Clone the repository**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
+
+3. **Run the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
+
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+
+)
+
+## 🚀 Live Site
+👉 https://getfizzi.vercel.app/
